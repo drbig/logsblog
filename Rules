@@ -1,0 +1,79 @@
+#!/usr/bin/env ruby
+#
+
+## COMPILE
+##
+
+compile '/articles/*' do
+  filter :source_inserter
+  filter :kramdown, :coderay_css => :class, :coderay_line_numbers => :table
+  filter :section_linker
+
+  layout 'article'
+end
+
+compile '/articles/*', :rep => :text do 
+  filter :html_killer
+  filter :source_inserter
+end
+
+compile '/assets/*' do
+  if %w{ jpg jpeg png gif }.member? item[:extension]
+    filter :image_resampler, :width => 640
+  end
+end
+
+compile '/errors/*' do
+  filter :kramdown
+  
+  layout 'error'
+end
+
+compile '/feed/' do
+  filter :erb
+end
+
+compile '*' do
+  case item[:extension]
+  when 'css'
+    filter :rainpress
+  when 'haml'
+    filter :haml
+  end
+end
+
+## ROUTE
+##
+
+route '/articles/*', :rep => :text do
+  item.identifier.chop + '.txt'
+end
+
+route '/assets/*' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+route '/styles/*' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+route '/' do
+  '/index.html'
+end
+
+route '/feed/' do
+  '/feed.xml'
+end
+
+route '*' do
+  if item.binary?
+    item.identifier.chop + '.' + item[:extension]
+  else
+    item.identifier.chop + '.html'
+  end
+end
+
+## DEFAULTS
+##
+
+layout '*', :haml, :encoding => "UTF-8", :format => :html5, :ugly => true

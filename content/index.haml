@@ -1,0 +1,29 @@
+!!! Strict
+%html{:xmlns => 'http://www.w3.org/1999/xhtml'}
+  %head
+    %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/list.css', :title => 'List style'}
+    %title logs.drbig.one.pl - latest
+  %body
+    %a{:id => 'top'}
+    #frame
+      #menu
+        %a.active{:href => '/index.html'} latest
+        %a{:href => '/archive.html'} archive
+        %a{:href => '/about.html'} about
+        %a.inactive article
+      #content
+        - @site.sorted_articles.slice(0, 10).each do |a|
+          %a{:href => a.path}
+            %span.stamp #{a[:created_at]}
+            #{a[:title]} 
+          %div.desc= a[:desc]
+      #info
+        Last update: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %Z')}.
+        %br
+        %a{:href => '#top'} Go to the top.
+        %a{:href => '/feed.xml'} ATOM feed.
+      #footer
+        Copyright &copy; Piotr S. Staszewski 2012
+        %br
+        %a{:href => 'http://www.drbig.one.pl'} http://www.drbig.one.pl

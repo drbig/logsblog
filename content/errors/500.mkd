@@ -1,0 +1,7 @@
+---
+title: 500 Error
+---
+500
+===
+
+Something's broken here.

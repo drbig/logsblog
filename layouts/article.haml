@@ -1,0 +1,36 @@
+!!! Strict
+%html{:xmlns => 'http://www.w3.org/1999/xhtml'}
+  %head
+    %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/article.css', :title => 'Article style'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/code.css'}
+    %title= @item[:title]
+  %body
+    %a{:id => 'top'}
+    #frame
+      #menu
+        %a{:href => '/index.html'} latest
+        %a{:href => '/archive.html'} archive
+        %a{:href => '/about.html'} about
+        %a.active{:href => @item.path} article
+      #content= yield
+      != "<div id=\"disqus_thread\"></div>\n<script type=\"text/javascript\">\nvar disqus_shortname = 'logsdrbig'; // required: replace example with your forum shortname\n(function() {\nvar dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\ndsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';\n(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();\n</script>\n<noscript>Please enable JavaScript to view the <a href=\"http://disqus.com/?ref_noscript\">comments powered by Disqus.</a></noscript>\n<a href=\"http://disqus.com\" class=\"dsq-brlink\">comments powered by <span class=\"logo-disqus\">Disqus</span></a>\n"
+      #info
+        Last update: #{@item[:created_at]}.
+        %a{:href => @item.path} &raquo; LINK 
+        %a{:href => @item.path(:rep => :text)} &raquo; TXT 
+        #{' '}
+        %a{:href => '/feed.xml'}> &raquo; ATOM
+        #{'. '}
+        %a{:href => '#top'}> Go to the top
+        #{'. Licence '}
+        %a{:href => 'http://creativecommons.org/licenses/by-nc-sa/3.0/'}> CC-BY-NC-SA
+        #{'. '}
+        %br
+        If you find this interesting go ahead and leave a comment or add a star.
+        %br
+        Any and all feedback is appreciated!
+      #footer
+        Copyright &copy; Piotr S. Staszewski 2012
+        %br
+        %a{:href => 'http://www.drbig.one.pl'} http://www.drbig.one.pl

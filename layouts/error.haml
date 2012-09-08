@@ -1,0 +1,23 @@
+!!! Strict
+%html{:xmlns => 'http://www.w3.org/1999/xhtml'}
+  %head
+    %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/error.css', :title => 'Error style'}
+    %title= @item[:title]
+  %body
+    %a{:id => 'top'}
+    #frame
+      #menu
+        %a{:href => '/index.html'} latest
+        %a{:href => '/archive.html'} archive
+        %a{:href => '/about.html'} about
+        %a.inactive article
+      #content= yield
+      #info
+        If the error persists and you believe it's my fault, please contact me at #{'<a href="mailto:p.staszewski@gmail.com">p.staszewski@gmail.com</a>'}.
+        %br
+        Sorry for any inconvenience.
+      #footer
+        Copyright &copy; Piotr S. Staszewski 2012
+        %br
+        %a{:href => 'http://www.drbig.one.pl'} http://www.drbig.one.pl

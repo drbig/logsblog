@@ -1,0 +1,131 @@
+/* main part
+ */
+
+body {
+  color: #e0e0e0;
+  background-color: #333333;
+  font: 10pt Verdana, sans-serif;
+}
+
+div#frame {
+  display: block;
+  width: 700px;
+  vertical-align: top;
+  padding: 0;
+  margin: 15px auto;
+}
+
+/* menu
+ */
+
+div#menu {
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid #B33333;
+  background-image: url('logo.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+div#menu a {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font: 10pt Tahoma, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #813133;
+  color: #c2c2c2;
+  display: inline;
+}
+
+div#menu a:hover {
+  background-color: #B33333;
+  color: white;
+}
+
+div#menu a.active {
+  background-color: #B33333;
+  color: white;
+}
+
+div#menu a.inactive {
+  background-color: #503033;
+  color: #929292;
+}
+
+/* content
+ */
+
+div#content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font: 10pt Verdana, sans-serif;
+}
+
+div#content a {
+  display: block;
+  font: 12pt Georgia, serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 5px;
+}
+
+div#content a:hover {
+  color: yellow;
+}
+
+div#content span.stamp {
+  font: 8pt Verdana, sans-serif;
+  color: #808080;
+}
+
+div#content div.desc {
+  margin-bottom: 10px;
+  border-left: 1px solid #808080;
+  padding-left: 10px;
+  text-align: justify;
+}
+
+/* info
+ */
+
+div#info {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid #B33333;
+  border-bottom: 2px solid #B33333;
+  background-image: url('logo.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+div#info a {
+  text-decoration: none;
+  color: #e0e0e0;
+}
+
+div#info a:hover {
+  color: red;
+}
+
+/* footer
+ */
+
+div#footer {
+  padding-top: 5px;
+  text-align: center;
+  font: 8pt Verdana, sans-serif;
+  color: #666666;
+}
+
+div#footer a {
+  text-decoration: none;
+  color: #666666;
+}
+
+div#footer a:hover {
+  color: white;
+}

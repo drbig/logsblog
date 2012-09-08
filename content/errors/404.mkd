@@ -1,0 +1,7 @@
+---
+title: 404 Error
+---
+404
+===
+
+Not found, or so it seems.

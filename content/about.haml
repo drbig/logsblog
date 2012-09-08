@@ -1,0 +1,35 @@
+!!! Strict
+%html{:xmlns => 'http://www.w3.org/1999/xhtml'}
+  %head
+    %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/article.css', :title => 'Article style'}
+    %title logs.drbig.one.pl - about
+  %body
+    %a{:id => 'top'}
+    #frame
+      #menu
+        %a{:href => '/index.html'} latest
+        %a{:href => '/archive.html'} archive
+        %a.active{:href => '/about.html'} about
+        %a.inactive article
+      #content
+        %h1 Yet another geeky blog
+        %p I'm not a blogger. I don't even like the word itself. However, I believe that there is value in writing down anything that maybe interesting, inspiring, helpful, useful, or preferably all that at once. I dedicate this site to logging my personal projects, hacks, experiments and maybe even thoughts on various matters. This will serve me as a point of reference and a cookbook of some sort, and it may also serve you, dear reader, as a source of information that you value. I find inspiration in what other people do, and you should too. Although I don't expect any significant traffic on these pages, I'm putting comments infrastructure (outsourced, as usual) so that, maybe, I'll even get feedback.
+        %h3 Hello, it's me
+        %p It's me indeed. My name is Piotr, but I go around the internetz as dRbiG (and there is a truly geeky story behind that handle). We're not doing any serious business here, so I believe that any bragging is pointless. You shouldn't have any preconceptions about me while reading any articles here (they should speak for themselves). If anything, I'd rather had you contact me - this requires some effort from your side, but at the same time justifies my effort. And contacting me is easy.
+        %ul
+          %li on IRC as dRbiG on #{'<a href="irc://poznan.irc.pl">IRCNet</a>'} and #{'<a href="irc://irc.freenode.net">FreeNode</a>'}
+          %li by email at #{'<a href="mailto:p.staszewski@gmail.com">p.staszewski@gmail.com</a>'}
+          %li on facebook, if you must, #{'<a href="https://www.facebook.com/p.staszewski">https://www.facebook.com/p.staszewski</a>'}
+        %p I've also decided that there must be some sort of a picture here.
+        %div.caption 8bit dRbiG.
+        %img{:src => '/assets/me.png', :alt => '8bit dRbiG'}
+      #info
+        Last update: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %Z')}.
+        %br
+        %a{:href => '#top'} Go to the top.
+        %a{:href => '/feed.xml'} ATOM feed.
+      #footer
+        Copyright &copy; Piotr S. Staszewski 2012
+        %br
+        %a{:href => 'http://www.drbig.one.pl'} http://www.drbig.one.pl
