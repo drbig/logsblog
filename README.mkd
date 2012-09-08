@@ -1,0 +1,2 @@
+Full repo of my [blog](http://logs.drbig.one.pl).
+You may wish to read [this post](http://logs.drbig.one.pl/articles/using_nanoc_for_blogging.html).
